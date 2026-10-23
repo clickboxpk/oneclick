@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://*.workers.dev; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0b5d57">
+<title>PAFWA Skills Development Centre NRK</title>
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<style>
+:root{--bg:#f4f6f5;--c:#fff;--t:#14201e;--m:#667570;--p:#0b5d57;--pt:#fff;--ok:#157a43;--no:#c62828;--lv:#b7791f;--b:#dbe3e0;--navy:#0a1a33}
+@media (prefers-color-scheme:dark){:root{--bg:#0e1514;--c:#16201e;--t:#e6eeec;--m:#92a39e;--p:#2bb3a6;--pt:#06201d;--ok:#4cc98a;--no:#ff7b72;--lv:#e0b44c;--b:#26332f}}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font:16px/1.45 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--t);padding:env(safe-area-inset-top) 0 calc(72px + env(safe-area-inset-bottom))}
+header{position:sticky;top:0;z-index:5;background:#0b5d57;color:#fff;display:flex;align-items:center;gap:10px;padding:8px 12px;padding-top:calc(8px + env(safe-area-inset-top))}
+header img{height:38px;width:auto}
+header .tt{flex:1;min-width:0}
+header b{display:block;font-size:.88rem;line-height:1.2}
+header small{opacity:.85;font-size:.75rem}
+header button{color:#fff;background:transparent;border:1px solid rgba(255,255,255,.4);padding:7px 10px;border-radius:10px;position:relative}
+#bc{position:absolute;top:-6px;right:-6px;min-width:18px;height:18px;border-radius:9px;background:#e53935;color:#fff;font-size:.7rem;display:none;align-items:center;justify-content:center;padding:0 4px}
+main{max-width:640px;margin:0 auto;padding:14px}
+h3{margin:20px 0 8px}
+input,select,textarea,button{font:inherit;color:inherit}
+input,select,textarea{width:100%;padding:12px;border:1px solid var(--b);border-radius:10px;background:var(--c);margin:0 0 10px}
+textarea{resize:vertical}
+label{display:block;font-size:.9rem;color:var(--m);margin:4px 0}
+button{cursor:pointer;border-radius:10px;padding:12px 16px;background:var(--c);border:1px solid var(--b)}
+button:disabled{opacity:.5}
+.pri{background:var(--p);color:var(--pt);border-color:var(--p);width:100%;font-weight:600;margin-top:6px}
+.ghost{background:transparent;border-color:transparent;padding:8px 10px}
+.bar{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:380px){.bar{grid-template-columns:1fr}}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.card{background:var(--c);border:1px solid var(--b);border-radius:14px;padding:14px;margin-bottom:10px}
+.card h4{margin:0 0 2px;font-size:1.05rem}
+.m{color:var(--m)}.ok{color:var(--ok)}.no{color:var(--no)}.lv{color:var(--lv)}
+.m2{display:block;font-size:.8rem;color:var(--m)}
+.tag{float:right;font-size:.8rem;padding:2px 10px;border-radius:99px;border:1px solid var(--b)}
+.tag.ok{border-color:var(--ok)}.tag.no{border-color:var(--no)}.tag.cl{color:var(--p);border-color:var(--p)}
+.nums{display:flex;flex-wrap:wrap;gap:6px 16px;margin:8px 0}
+.nums b{font-size:1.2rem}
+.pb{height:6px;border-radius:9px;background:var(--b);overflow:hidden;margin:3px 0 9px}
+.pb i{display:block;height:100%;background:var(--p);border-radius:9px}.pb i.t{background:var(--m)}
+.bl{display:flex;justify-content:space-between;gap:8px;font-size:.85rem}
+.rec{border-top:1px solid var(--b);margin-top:10px;padding-top:10px}
+.hrs{font-size:.85rem;color:var(--m);margin:2px 0 6px}
+details summary{cursor:pointer;color:var(--p);padding:4px 0}
+details>div{padding:5px 0;border-top:1px solid var(--b)}
+details small{display:block}
+svg text{fill:var(--m);font-size:8px}
+.lg{display:inline-block;width:18px;border-top:2px solid;vertical-align:middle;margin:0 5px 2px 10px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--c);border:1px solid var(--b);border-radius:12px;padding:12px;margin-bottom:6px;min-height:52px;cursor:pointer;user-select:none}
+.row.ab{border-color:var(--no)}.row.ab small{color:var(--no)}
+.row.lv{border-color:var(--lv)}.row.lv small{color:var(--lv)}
+.row small{display:block;font-size:.8rem}
+.pill{font-size:.85rem;padding:5px 12px;border-radius:99px;border:1px solid var(--ok);color:var(--ok);white-space:nowrap}
+.pill.a{border-color:var(--no);color:var(--no)}.pill.l{border-color:var(--lv);color:var(--lv)}
+.sum{position:sticky;top:calc(54px + env(safe-area-inset-top));background:var(--bg);padding:6px 0;font-weight:600;z-index:2}
+.chk label{display:flex;gap:8px;align-items:center;color:var(--t);padding:5px 0}
+.chk input{width:auto;margin:0}
+.acts{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 10px}
+.cdays{background:linear-gradient(135deg,#0b5d57,#0a3f5c);color:#fff;border-radius:16px;padding:14px;margin-bottom:12px}
+.cdh{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;opacity:.85;margin-bottom:6px}
+.cdg{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;text-align:center}
+.cdg b{display:block;font-size:1.9rem;line-height:1.1}
+.cdg span{display:block;font-size:.68rem;opacity:.9;line-height:1.2;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cdg small{font-size:.65rem;opacity:.7}
+.cdone{display:flex;align-items:baseline;gap:10px}.cdone b{font-size:2.4rem;line-height:1}
+.seg{display:flex;background:var(--b);border-radius:11px;padding:3px;margin-bottom:10px}
+.seg button{flex:1;border:0;background:transparent;padding:8px}
+.seg button.on{background:var(--c);font-weight:600}
+nav{position:fixed;left:0;right:0;bottom:0;display:flex;overflow-x:auto;background:var(--c);border-top:1px solid var(--b);padding-bottom:env(safe-area-inset-bottom);z-index:5}
+nav button{flex:1 0 66px;border:0;border-radius:0;background:none;padding:8px 2px;font-size:.7rem;color:var(--m);display:flex;flex-direction:column;align-items:center;gap:2px}
+nav button.on{color:var(--p);font-weight:700}
+.hero{background:linear-gradient(180deg,#08142a,#0e2b55);color:#fff;text-align:center;padding:calc(34px + env(safe-area-inset-top)) 20px 30px;border-radius:0 0 28px 28px}
+.hero img{height:128px;width:auto}
+.hero h1{font-size:1.1rem;margin:14px 0 2px;line-height:1.3;letter-spacing:.02em}
+.hero p{margin:0;opacity:.7;font-size:.85rem}
+.login{max-width:360px;margin:22px auto 0;padding:0 20px}
+#toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(84px + env(safe-area-inset-bottom));background:#222;color:#fff;padding:10px 16px;border-radius:10px;z-index:40;max-width:90%;display:none}
+#sync{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(80px + env(safe-area-inset-bottom));background:var(--p);color:var(--pt);padding:6px 14px;border-radius:99px;font-size:.85rem;z-index:9;display:none;cursor:pointer}
+#sheet{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:20;display:none;align-items:flex-end;justify-content:center}
+#sheet.on{display:flex}
+.sb{background:var(--bg);width:100%;max-width:680px;max-height:92vh;overflow:auto;border-radius:20px 20px 0 0;padding:10px 14px calc(18px + env(safe-area-inset-bottom))}
+.grab{width:40px;height:4px;border-radius:2px;background:var(--b);margin:0 auto 10px}
+.nv{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}
+#notif{position:fixed;top:calc(8px + env(safe-area-inset-top));left:50%;transform:translate(-50%,-160%);width:min(94vw,520px);background:var(--c);border:1px solid var(--b);border-left:4px solid var(--p);border-radius:16px;box-shadow:0 10px 34px rgba(0,0,0,.22);padding:12px 14px;z-index:50;transition:transform .35s cubic-bezier(.2,.9,.3,1)}
+#notif.on{transform:translate(-50%,0)}
+#notif p{margin:4px 0 8px}
+.msg{border-left:4px solid var(--lv)}.msg.done{border-left-color:var(--ok);opacity:.8}
+canvas{display:block}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="sync" onclick="pump()"></div>
+<div id="toast"></div>
+<div id="sheet"></div>
+<div id="notif"></div>
+<script>
+const API='PASTE_WORKER_URL_HERE';   // <-- paste your Cloudflare Worker URL here (https://xxxx.workers.dev)
+const COURSES=['CO/IT Asstt (A)','CO/IT Asstt (B)','DM','CGP'];
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let tok=sessionStorage.t||'',me=null,tab='',S={},HOL=[];
+const K={};            // in-memory cache: screens open instantly, then refresh in the background
+const SEEN=new Set();  // message ids already announced
+
+/* ---------- dates, weekends (Sat/Sun) and holidays ---------- */
+const UTC=s=>new Date(s+'T00:00:00Z');
+const addd=(s,n)=>new Date(+UTC(s)+n*864e5).toISOString().slice(0,10);
+const dow=s=>UTC(s).getUTCDay();
+const fd=(s,o)=>UTC(s).toLocaleDateString('en-GB',{timeZone:'UTC',...o});
+const sd=s=>s?fd(s,{day:'numeric',month:'short',year:'2-digit'}):'';
+const fdt=i=>new Date(i).toLocaleString('en-GB',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
+const today=()=>{const d=new Date();return new Date(d-d.getTimezoneOffset()*6e4).toISOString().slice(0,10)};
+const holOn=s=>HOL.find(h=>s>=h.f&&s<=h.t);
+const closed=s=>{const w=dow(s);if(w===0||w===6)return{k:'wk',t:'Weekend'};const h=holOn(s);return h?{k:'hol',t:'Holiday',r:h.r}:null};
+const sdays=(a,b)=>{let n=0;for(let d=a;d<=b;d=addd(d,1))if(!closed(d))n++;return n}; // school days Mon-Fri minus holidays
+const pct=(a,b)=>b?Math.round(100*a/b):0;
+const bar=(l,r,p,c='')=>`<div class="bl"><span>${l}</span><span class="m">${r}</span></div><div class="pb"><i class="${c}" style="width:${Math.min(100,p)}%"></i></div>`;
+function toast(m){const t=$('#toast');t.textContent=m;t.style.display='block';clearTimeout(toast.h);toast.h=setTimeout(()=>t.style.display='none',2800)}
+
+/* ---------- network: retry, timeout, ordered background saving ---------- */
+const WR=new Set(['save','stuAdd','stuDel','setDates','modAdd','modDel','holAdd','holDel','msgSend','msgAck','userAdd','userPw','userToggle']);
+const Q=[];let busy=0;
+async function api(a,d={},tries=2,silent=0){
+  const T=m=>{if(!silent)toast(m)};
+  if(!WR.has(a)&&busy&&!silent)for(let i=0;i<40&&busy;i++)await new Promise(r=>setTimeout(r,250)); // let pending saves finish first
+  if(!navigator.onLine){T('You are offline. Check your internet.');return null}
+  const ac=new AbortController(),to=setTimeout(()=>ac.abort(),25000);
+  try{
+    const res=await fetch(API,{method:'POST',body:JSON.stringify({a,t:tok,...d}),signal:ac.signal});
+    const txt=await res.text();let r;
+    try{r=JSON.parse(txt)}catch(_){T('Unexpected reply from server. Please try again.');return null}
+    if(r.err==='auth'){logout();toast('Session expired. Please sign in again.');return null}
+    if(r.err){T(r.err);return null}
+    return r;
+  }catch(e){
+    if(tries>1&&a!=='userAdd'&&a!=='msgSend'){await new Promise(r=>setTimeout(r,800));return api(a,d,tries-1,silent)}
+    T(e.name==='AbortError'?'The server took too long. Please try again.':'Could not reach the server. Please try again.');
+    return null;
+  }finally{clearTimeout(to)}
+}
+function setSync(){const s=$('#sync');s.style.display=Q.length?'block':'none';s.textContent=Q[0]&&Q[0].fail?'⚠ Not saved yet — tap to retry':'Saving…'}
+async function pump(){if(busy)return;busy=1;while(Q.length){const j=Q[0];j.fail=0;setSync();const r=await api(j.a,j.d);if(r){Q.shift();j.ok&&j.ok(r)}else{j.fail=1;break}}busy=0;setSync()}
+const enqueue=(a,d,ok)=>{Q.push({a,d,ok});pump()};
+window.onbeforeunload=e=>Q.length?(e.preventDefault(),e.returnValue=''):undefined;
+
+/* ---------- CSV ---------- */
+function parseCSV(t){
+  const R=[];let r=[],c='',q=0;t=t.replace(/^\uFEFF/,'');
+  for(let i=0;i<t.length;i++){const x=t[i];
+    if(q){if(x==='"'){if(t[i+1]==='"'){c+='"';i++}else q=0}else c+=x}
+    else if(x==='"')q=1;
+    else if(x===','||x==='\t'){r.push(c);c=''}
+    else if(x==='\n'||x==='\r'){if(x==='\r'&&t[i+1]==='\n')i++;r.push(c);R.push(r);r=[];c=''}
+    else c+=x}
+  if(c||r.length){r.push(c);R.push(r)}
+  return R.filter(r=>r.some(x=>x.trim()));
+}
+function parseNames(t){
+  const R=parseCSV(t);if(!R.length)return[];let ix=0;
+  const h=R[0].findIndex(x=>/^\s*(student( name)?|name)s?\s*$/i.test(x));
+  if(h>=0){ix=h;R.shift()}
+  return R.map(r=>(r[ix]||'').trim()).filter(Boolean);
+}
+function parseMods(t){
+  const R=parseCSV(t);if(!R.length)return[];const ix={m:0,t:1,p:2,u:3};
+  if(R[0].some(x=>/^\s*(module( name)?|name)\s*$/i.test(x))){
+    R.shift().forEach((x,i)=>{x=x.toLowerCase();if(/module|name/.test(x))ix.m=i;else if(/theor/.test(x))ix.t=i;else if(/pract/.test(x))ix.p=i;else if(/unit/.test(x))ix.u=i})}
+  const M={};
+  R.forEach(r=>{const n=(r[ix.m]||'').trim();if(!n)return;const m=M[n]=M[n]||{name:n,th:0,pr:0,units:[]};
+    if(+r[ix.t])m.th=+r[ix.t];if(+r[ix.p])m.pr=+r[ix.p];
+    (r[ix.u]||'').split(/[|;\n]/).map(x=>x.trim()).filter(Boolean).forEach(u=>{if(!m.units.includes(u))m.units.push(u)})});
+  return Object.values(M);
+}
+const pickFile=cb=>{const i=document.createElement('input');i.type='file';i.accept='.csv,.txt,text/csv';i.onchange=async()=>{if(i.files[0])cb(await i.files[0].text())};i.click()};
+
+/* ---------- image cards (drawn on canvas: preview and PNG download are identical) ---------- */
+const LOGO=new Image();LOGO.src='logo.png';
+const LOGO_OK=new Promise(r=>{LOGO.onload=r;LOGO.onerror=r});
+const SANS='Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif',SERIF='Georgia,"Times New Roman",serif';
+const NAVY='#0b1f3a',GOLD='#c8a24a',TEAL='#0b5d57',OK='#157a43',NO='#c62828',LV='#b7791f',INK='#14201e',MUT='#667570',LINE='#e3e9e7';
+const lw=h=>LOGO.naturalWidth?h*LOGO.naturalWidth/LOGO.naturalHeight:0;
+const lg=(g,x,y,h)=>{const w=lw(h);if(w)g.drawImage(LOGO,x,y,w,h);return w};
+const rr=(g,x,y,w,h,r)=>{g.beginPath();g.roundRect?g.roundRect(x,y,w,h,r):g.rect(x,y,w,h)};
+function txt(g,s,x,y,font,col,al='left',ls=0){g.font=font;g.fillStyle=col;g.textAlign=al;g.letterSpacing=ls+'px';g.fillText(s,x,y)}
+function para(g,s,x,y,maxW,lh,font,col){
+  g.font=font;g.fillStyle=col;g.textAlign='left';g.letterSpacing='0px';
+  const L=[];let c='';String(s).split(/\s+/).forEach(w=>{const t=c?c+' '+w:w;if(g.measureText(t).width>maxW&&c){L.push(c);c=w}else c=t});if(c)L.push(c);
+  L.forEach((l,i)=>g.fillText(l,x,y+i*lh));return y+L.length*lh;
+}
+async function makeCard(W,draw){
+  await LOGO_OK;try{await document.fonts.load('600 20px Inter')}catch(_){}
+  const k=2,c=document.createElement('canvas');c.width=W*k;c.height=4000*k;let g=c.getContext('2d');g.scale(k,k);
+  const H=Math.ceil(draw(g,W,4000));
+  c.width=W*k;c.height=H*k;g=c.getContext('2d');g.scale(k,k);draw(g,W,H);
+  c.style.width='100%';c.style.height='auto';c.style.borderRadius='14px';return c;
+}
+const dl=(c,name)=>c.toBlob(b=>{const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),4000)});
+
+function drawDossier(g,W,H,o){
+  g.fillStyle='#f4f6f5';g.fillRect(0,0,W,H);
+  g.fillStyle=NAVY;g.fillRect(0,0,W,190);
+  const w=lg(g,36,34,122),x0=36+w+26,mw=W-x0-30;
+  txt(g,'PSDC NRK  ·  STUDENT DOSSIER',x0,70,'600 13px '+SANS,GOLD,'left',2.5);
+  let fs=34;g.font='700 '+fs+'px '+SANS;while(g.measureText(o.n).width>mw&&fs>20){fs-=2;g.font='700 '+fs+'px '+SANS}
+  txt(g,o.n,x0,112,'700 '+fs+'px '+SANS,'#fff');
+  txt(g,o.course,x0,142,'500 17px '+SANS,'#b9c6dc');
+  txt(g,`Since the start of the course · ${o.days.length} class days`,x0,166,'400 13px '+SANS,'#8fa3c4');
+  const n=ch=>[...o.st].filter(x=>x===ch).length,P=n('P'),A=n('A'),L=n('L');
+  const tw=(W-72-36)/4;
+  [[pct(P,P+A+L)+'%','Attendance',TEAL],[P,'Present',OK],[A,'Absent',NO],[L,'Leave',LV]].forEach((t,i)=>{
+    const x=36+i*(tw+12);rr(g,x,216,tw,96,14);g.fillStyle='#fff';g.fill();g.strokeStyle=LINE;g.lineWidth=1;g.stroke();
+    txt(g,String(t[0]),x+tw/2,266,'700 36px '+SANS,t[2],'center');txt(g,t[1],x+tw/2,295,'500 13px '+SANS,MUT,'center');
+  });
+  let y=360;
+  txt(g,'Monthly record',36,y,'700 21px '+SANS,INK);y+=22;
+  const M={};o.days.forEach((d,i)=>{const s=o.st[i];if(s==='-')return;const m=M[d[0].slice(0,7)]=M[d[0].slice(0,7)]||{P:0,A:0,L:0};m[s]++});
+  const ks=Object.keys(M).sort();
+  if(!ks.length){txt(g,'No attendance recorded yet',36,y+28,'400 16px '+SANS,MUT);y+=50}
+  ks.forEach(k=>{const m=M[k],t=m.P+m.A+m.L,bx=150,bw=W-36-150-140;
+    txt(g,fd(k+'-01',{month:'short',year:'numeric'}),36,y+32,'600 16px '+SANS,INK);
+    g.save();rr(g,bx,y+20,bw,12,6);g.clip();g.fillStyle=LINE;g.fillRect(bx,y+20,bw,12);let x=bx;
+    [['P',OK],['A',NO],['L',LV]].forEach(([s,c])=>{const ww=bw*m[s]/t;g.fillStyle=c;g.fillRect(x,y+20,ww,12);x+=ww});g.restore();
+    txt(g,`P ${m.P} · A ${m.A} · L ${m.L}`,W-36,y+32,'500 14px '+SANS,MUT,'right');y+=48});
+  y+=18;
+  const miss=o.days.map((d,i)=>[d[0],d[1],o.st[i]]).filter(x=>x[2]==='A'||x[2]==='L');
+  txt(g,`Topics missed  ·  ${miss.length}`,36,y,'700 21px '+SANS,INK);y+=16;
+  if(!miss.length){rr(g,36,y+8,W-72,70,14);g.fillStyle='#fff';g.fill();g.strokeStyle=LINE;g.stroke();txt(g,'✓  No missed topics — perfect record',W/2,y+50,'500 16px '+SANS,OK,'center');y+=96}
+  let cur='';
+  miss.forEach(x=>{
+    const mk=x[0].slice(0,7);
+    if(mk!==cur){cur=mk;y+=30;txt(g,fd(mk+'-01',{month:'long',year:'numeric'}).toUpperCase(),36,y,'600 12px '+SANS,MUT,'left',2)}
+    y+=18;const col=x[2]==='A'?NO:LV;
+    g.beginPath();g.arc(52,y+8,13,0,7);g.fillStyle=col;g.fill();txt(g,x[2],52,y+13,'700 13px '+SANS,'#fff','center');
+    txt(g,fd(x[0],{weekday:'short',day:'numeric',month:'short'}),78,y+13,'600 16px '+SANS,INK);
+    txt(g,x[2]==='A'?'Absent':'Leave',W-36,y+13,'600 13px '+SANS,col,'right');
+    y=para(g,x[1]||'—',78,y+38,W-78-36,22,'400 15px '+SANS,'#3b4a46')+4;
+    g.fillStyle=LINE;g.fillRect(36,y,W-72,1);
+  });
+  y+=34;txt(g,'Generated '+fd(today(),{day:'numeric',month:'long',year:'numeric'}),W/2,y,'400 12px '+SANS,MUT,'center');
+  return y+30;
+}
+
+function drawPres(g,W,H,o){
+  const bg=g.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#08142a');bg.addColorStop(1,'#0e2b55');g.fillStyle=bg;g.fillRect(0,0,W,H);
+  g.strokeStyle='rgba(200,162,74,.55)';g.lineWidth=1.5;g.strokeRect(18,18,W-36,H-36);
+  let y=56;const lh=128;lg(g,(W-lw(lh))/2,y,lh);y+=lh+54;
+  txt(g,'President PAFWA',W/2,y,'700 46px '+SERIF,'#fff','center',3);y+=26;
+  g.fillStyle=GOLD;g.fillRect(W/2-36,y,72,2);y+=36;
+  txt(g,'PSDC NRK',W/2,y,'500 18px '+SANS,'#d9c28a','center',7);y+=34;
+  txt(g,'DAILY ACADEMIC BRIEFING',W/2,y,'500 11px '+SANS,'#8fa3c4','center',4);y+=22;
+  txt(g,fd(o.date,{weekday:'long',day:'numeric',month:'long',year:'numeric'}),W/2,y,'400 15px '+SANS,'#c9d3e6','center');y+=34;
+  const c=closed(o.date),X=54,MW=W-108;
+  o.items.forEach(i=>{
+    g.fillStyle='rgba(255,255,255,.12)';g.fillRect(X,y,MW,1);y+=36;
+    txt(g,i.course,X,y,'700 23px '+SERIF,'#fff');
+    txt(g,'Class Day '+i.cd,W-X,y,'600 14px '+SANS,GOLD,'right',1);y+=28;
+    const rep=!c&&i.topic;
+    y=para(g,c?(c.k==='hol'?'Holiday'+(c.r?' — '+c.r:''):'Weekend — no classes'):i.topic||'Report not yet submitted',X,y,MW,23,'400 16px '+SANS,rep?'#e6edf8':'#8fa3c4');
+    if(rep){y+=6;txt(g,`Present ${i.present} · Absent ${i.absent.length} · Leave ${i.leave.length}`+(i.module?`    Theory ${i.th}h · Practical ${i.pr}h`:''),X,y+12,'400 13px '+SANS,'#8fa3c4');y+=26}
+    y+=12;const sp=pct(i.prog.count,i.prog.total);
+    rr(g,X,y,MW,6,3);g.fillStyle='rgba(255,255,255,.12)';g.fill();
+    if(sp){rr(g,X,y,Math.max(6,MW*sp/100),6,3);g.fillStyle=GOLD;g.fill()}
+    y+=24;txt(g,`Syllabus ${sp}%`,X,y,'500 13px '+SANS,'#c9d3e6');txt(g,`${i.prog.count} / ${i.prog.total} units`,W-X,y,'400 13px '+SANS,'#8fa3c4','right');y+=14;
+  });
+  g.fillStyle='rgba(255,255,255,.12)';g.fillRect(X,y+8,MW,1);y+=46;
+  txt(g,'PAFWA Skills Development Centre NRK',W/2,y,'400 12px '+SANS,'#8fa3c4','center',1);
+  return y+40;
+}
+
+/* ---------- bottom sheet ---------- */
+function sheet(html){const s=$('#sheet');s.innerHTML=`<div class="sb"><div class="grab"></div>${html}</div>`;s.classList.add('on');s.onclick=e=>{if(e.target===s)closeSheet()};const x=$('#x');if(x)x.onclick=closeSheet}
+function closeSheet(){$('#sheet').classList.remove('on');$('#sheet').innerHTML='';S.sh=''}
+
+/* ---------- shell ---------- */
+function logout(){if(tok&&!API.startsWith('PASTE'))fetch(API,{method:'POST',body:JSON.stringify({a:'logout',t:tok}),keepalive:true}).catch(()=>{});tok='';sessionStorage.t='';me=null;HOL=[];for(const k in K)delete K[k];Q.length=0;closeSheet();vLogin()}
+const courseSel=()=>{const cs=me.courses;if(!cs.includes(S.c))S.c=cs[0];
+  return cs.length>1?`<select id="cs">${cs.map(c=>`<option ${c==S.c?'selected':''}>${esc(c)}</option>`).join('')}</select>`:`<b>${esc(S.c)}</b>`};
+
+function vLogin(){
+  $('#app').innerHTML=`<div class="hero"><img src="logo.png" alt=""><h1>PAFWA Skills Development Centre NRK</h1><p>Staff portal</p></div>
+  <div class="login"><input id="u" placeholder="Username" autocapitalize="none" autocomplete="username">
+  <input id="p" type="password" placeholder="Password" autocomplete="current-password"><button id="go" class="pri">Sign in</button></div>`;
+  const go=async()=>{$('#go').disabled=true;$('#go').textContent='Signing in…';
+    const r=await api('login',{u:$('#u').value,p:$('#p').value,today:today()});
+    if(r)start(r);else{$('#go').disabled=false;$('#go').textContent='Sign in'}};
+  $('#go').onclick=go;$('#p').onkeydown=e=>{if(e.key==='Enter')go()};
+}
+function start(r){
+  tok=r.t||tok;sessionStorage.t=tok;me=r.me;HOL=me.hol||[];S={};tab='';
+  const i=r.init||{};
+  if(i.dash)K['d'+i.dash.date]=i.dash.items;
+  if(i.day){S.c=i.day.course;S.ad=i.day.date;S.pre=i.day}
+  draw();if(i.msgs)setInbox(i.msgs,true);
+}
+
+function draw(){
+  const T={dash:['📊','Dashboard'],att:['✅','Attendance'],stu:['👥','Students'],syl:['📚','Syllabus'],rec:['🪪','Records'],msg:['💬','Messages'],pres:['🎖','President'],usr:['🔑','Users']};
+  const p=me.p,tabs=[...(p.all?['dash']:[]),...(p.w?['att','stu','syl']:[]),'rec',...(p.send?['msg']:[]),...(p.all?['pres']:[]),...(p.adm?['usr']:[])];
+  if(!tabs.includes(tab))tab=tabs[0];
+  $('#app').innerHTML=`<header><img src="logo.png" alt=""><div class="tt"><b>PAFWA Skills Development Centre NRK</b><small>${esc(me.name)} · ${esc(me.rl)}</small></div>
+   ${me.p.recv?'<button id="bell" aria-label="Messages">🔔<i id="bc"></i></button>':''}<button id="lo">Sign out</button></header><main id="main"></main>
+   <nav>${tabs.map(t=>`<button data-t="${t}" class="${t==tab?'on':''}"><span style="font-size:1.2rem">${T[t][0]}</span>${T[t][1]}</button>`).join('')}</nav>`;
+  $('#lo').onclick=logout;
+  if($('#bell'))$('#bell').onclick=openInbox;
+  document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{tab=b.dataset.t;draw()});
+  setInbox(K.inbox||[],false);
+  ({dash:vDash,att:vAtt,stu:vStu,syl:vSyl,rec:vRec,msg:vMsg,pres:vPres,usr:vUsr})[tab]();
+}
+
+/* ---------- Class Days / progress chart ---------- */
+const totalDays=i=>i.start&&i.deadline?sdays(i.start,i.deadline):0;
+function chart(i,D){
+  if(!i.start||!i.deadline)return '<p class="m">Set the course start date and deadline in the Syllabus tab.</p>';
+  const hp=i.hpd||3,ix={};let T=0;
+  for(let d=i.start;d<=i.deadline;d=addd(d,1)){if(!closed(d))T++;ix[d]=T}
+  const req=i.prog.hrsAll,cap=T*hp,served=i.cd*hp,ym=Math.max(cap,req,served,1)*1.1;
+  const W=320,H=150,L=36,R=46,Tp=14,B=22,iw=W-L-R,ih=H-Tp-B;
+  const X=n=>(L+Math.min(1,Math.max(0,n/Math.max(1,T)))*iw).toFixed(1),Y=v=>(Tp+ih-v/ym*ih).toFixed(1);
+  const pts=[[0,0]];i.prog.series.forEach((s,k)=>pts.push([ix[s[0]]??(s[0]<i.start?0:T),(k+1)*hp]));
+  const path=pts.map((q,k)=>(k?'L':'M')+X(q[0])+' '+Y(q[1])).join(''),last=pts[pts.length-1];
+  const gap=req>cap?`<line x1="${+X(T)+8}" y1="${Y(cap)}" x2="${+X(T)+8}" y2="${Y(req)}" stroke="var(--no)" stroke-width="1.6" stroke-dasharray="1.5 2.5" stroke-linecap="round"/>
+    <text x="${+X(T)+12}" y="${(+Y(cap)+ +Y(req))/2}" dy="3" style="fill:var(--no);font-weight:700;font-size:9px">${req-cap}h</text>`:'';
+  return `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Hours chart">
+   <line x1="${L}" y1="${Y(0)}" x2="${W-R}" y2="${Y(0)}" stroke="var(--b)"/>
+   <line x1="${X(0)}" y1="${Y(0)}" x2="${X(T)}" y2="${Y(cap)}" stroke="var(--m)" stroke-dasharray="4 3"/>
+   <line x1="${X(0)}" y1="${Y(0)}" x2="${X(T)}" y2="${Y(req)}" stroke="var(--no)" stroke-width="1.8" stroke-dasharray="1.5 3" stroke-linecap="round"/>
+   <path d="${path}" fill="none" stroke="var(--p)" stroke-width="2.2" stroke-linejoin="round"/>
+   <circle cx="${X(last[0])}" cy="${Y(last[1])}" r="3.2" fill="var(--p)"/>${gap}
+   <text x="2" y="${Y(req)}" dy="3" style="fill:var(--no)">${req}h</text><text x="2" y="${Y(cap)}" dy="${req>cap&&Math.abs(Y(req)-Y(cap))<10?12:3}">${cap}h</text><text x="2" y="${Y(0)}" dy="3">0</text>
+   <text x="${X(last[0])}" y="${Y(last[1])-7}" text-anchor="middle" style="fill:var(--p);font-weight:700;font-size:9px">${served}h</text>
+   <text x="${L}" y="${H-5}">${sd(i.start)}</text><text x="${W-R}" y="${H-5}" text-anchor="end">${sd(i.deadline)}</text></svg>
+   <div class="hrs" style="text-align:center"><i class="lg" style="border-color:var(--p)"></i>Served<i class="lg" style="border-color:var(--m);border-top-style:dashed"></i>Available<i class="lg" style="border-color:var(--no);border-top-style:dotted"></i>Syllabus</div>`;
+}
+
+/* ---------- dashboard (principal / chief coordinator / admin) ---------- */
+const absList=(t,l,topic)=>l.length?`<details><summary class="${t=='Absent'?'no':'lv'}">${t} (${l.length})</summary>${l.map(s=>`<div>${esc(s.n)}<small class="m">Total: Absent ${s.a} · Leave ${s.l}</small><small class="m">Missed: ${esc(topic)}</small></div>`).join('')}</details>`:'';
+const status=(D,i)=>closed(D)||(i.start&&D<i.start?{k:'ns',t:'Not started'}:i.topic?{k:'ok',t:'Updated'}:{k:'pend',t:'Pending'});
+function dashCard(i,D){
+  const p=i.prog,sp=pct(p.count,p.total),st=status(D,i),hp=i.hpd||3,T=totalDays(i);
+  let tl='<div class="m" style="margin:4px 0 8px">Deadline not set</div>',tri='',sts='';
+  if(T){
+    const el=D<i.start?0:sdays(i.start,D<i.deadline?D:i.deadline),tp=pct(el,T),left=Math.max(0,T-el);
+    tl=bar('Time (Mon–Fri)',`${tp}% · ${left} school days left · ${sd(i.deadline)}`,tp,'t');
+    const delta=p.count-p.total*el/T,tol=p.total*.03;
+    if(p.total)sts=delta>tol?`<span class="ok">Ahead by ${Math.round(delta)} units</span>`:delta<-tol?`<span class="no">Behind by ${Math.ceil(-delta)} units</span>`:`<span class="ok">On track</span>`;
+    const cap=T*hp;
+    tri=`<div class="three" style="text-align:center;margin:6px 0"><div><b>${i.cd*hp}h</b><span class="m2">Served</span></div><div><b>${cap}h</b><span class="m2">Available</span></div><div><b class="${p.hrsAll>cap?'no':''}">${p.hrsAll}h</b><span class="m2">Syllabus</span></div></div>`;
+  }
+  const rec=st.k==='ok'?`<div class="rec"><b>${esc(i.topic)}</b>${i.module?`<div class="hrs">Module hours: Theory ${i.th}h · Practical ${i.pr}h</div>`:''}
+    <div class="m">Instructor: ${esc(i.by)}</div>
+    <div class="nums"><span class="ok"><b>${i.present}</b> Present</span><span class="no"><b>${i.absent.length}</b> Absent</span><span class="lv"><b>${i.leave.length}</b> Leave</span><span class="m"><b>${i.total}</b> Total</span></div>
+    ${absList('Absent',i.absent,i.topic)}${absList('Leave',i.leave,i.topic)}</div>`
+    :`<div class="m rec">${st.k==='hol'?'Holiday'+(st.r?' — '+esc(st.r):'')+' · no classes':st.k==='wk'?'Weekend · no classes':st.k==='ns'?'Course starts '+sd(i.start):'No record uploaded for this date'}</div>`;
+  return `<div class="card"><span class="tag ${st.k==='ok'?'ok':st.k==='pend'?'no':'cl'}">${st.t}</span><h4>${esc(i.course)}</h4><div style="height:8px"></div>
+   ${bar('Syllabus',`${p.count}/${p.total} units · ${sp}%`,sp)}${tl}${tri}${sts}${rec}
+   <details style="margin-top:8px"><summary>Hours chart &amp; modules</summary><div>${chart(i,D)}</div>
+   ${i.mods.map(m=>`<div>${esc(m.name)}<div class="hrs">Theory ${m.th}h · Practical ${m.pr}h · ${m.d}/${m.n} units</div><div class="pb"><i style="width:${pct(m.d,m.n)}%"></i></div></div>`).join('')||'<div class="m">No modules added yet</div>'}</details></div>`;
+}
+const cdStrip=items=>`<div class="cdays"><div class="cdh">Class Days</div><div class="cdg">${items.map(i=>{const T=totalDays(i);return `<div><b>${i.cd}</b><span>${esc(i.course)}</span>${T?`<small>of ${T}</small>`:''}</div>`}).join('')}</div></div>`;
+async function vDash(){
+  const dt=S.dd||today(),key='d'+dt;
+  $('#main').innerHTML=`<div class="bar"><input type="date" id="dd" value="${dt}" max="${today()}"><button id="hb">🗓 Holidays</button></div><div id="out" class="m">Loading…</div>`;
+  $('#dd').onchange=e=>{S.dd=e.target.value||today();vDash()};$('#hb').onclick=openHol;
+  const show=items=>{if(tab!=='dash'||!$('#out'))return;$('#out').className='';$('#out').innerHTML=cdStrip(items)+items.map(i=>dashCard(i,dt)).join('')};
+  if(K[key])show(K[key]);
+  const r=await api('dash',{date:dt});if(r){K[key]=r.items;show(r.items)}
+}
+
+/* ---------- holidays ---------- */
+function openHol(){
+  const can=me.p.hol;
+  const fmtR=h=>h.f===h.t?fd(h.f,{day:'numeric',month:'short',year:'numeric'}):fd(h.f,{day:'numeric',month:'short'})+' – '+fd(h.t,{day:'numeric',month:'short',year:'numeric'});
+  const list=()=>HOL.slice().sort((a,b)=>a.f<b.f?-1:1).map(h=>`<div class="row" style="cursor:default"><div><b>${fmtR(h)}</b><small class="m">${esc(h.r)||'School closed'}</small></div>${can?`<button class="ghost" data-f="${h.f}" data-t="${h.t}" data-r="${esc(h.r)}" aria-label="Delete">✕</button>`:''}</div>`).join('')||'<p class="m">No holidays marked.</p>';
+  sheet(`<div class="nv"><b style="font-size:1.1rem">Holidays</b><button id="x" class="ghost">✕</button></div>`+
+   (can?`<div class="two"><div><label>From</label><input type="date" id="hf"></div><div><label>To</label><input type="date" id="ht"></div></div>
+   <input id="hr" placeholder="Reason (e.g. Eid ul Fitr)"><button id="ha" class="pri" style="margin-top:0">Mark as holiday</button><h3>Marked days</h3>`:'<p class="m">Saturday and Sunday are always treated as weekends.</p>')+`<div id="hl">${list()}</div>`);
+  if(!can)return;
+  $('#hf').onchange=()=>{if(!$('#ht').value||$('#ht').value<$('#hf').value)$('#ht').value=$('#hf').value};
+  const after=r=>{if(!r)return;HOL=r.hol;me.hol=HOL;$('#hl').innerHTML=list();if(tab==='dash')vDash()};
+  $('#ha').onclick=async()=>{if(!$('#hf').value||!$('#ht').value)return toast('Choose From and To dates');
+    $('#ha').disabled=true;const r=await api('holAdd',{from:$('#hf').value,to:$('#ht').value,r:$('#hr').value});$('#ha').disabled=false;
+    if(r){['hf','ht','hr'].forEach(i=>$('#'+i).value='');toast('Holiday saved ✔')}after(r)};
+  $('#hl').onclick=async e=>{const d=e.target.dataset;if(!d.f||!confirm('Remove this holiday?'))return;after(await api('holDel',{from:d.f,to:d.t,r:d.r}))};
+}
+
+/* ---------- attendance (teacher) ---------- */
+async function vAtt(){
+  S.ad=S.ad||today();
+  $('#main').innerHTML=`<div class="bar">${courseSel()}<input type="date" id="ad" max="${today()}" value="${S.ad}"></div><div id="bx" class="m" style="margin-top:10px">Loading…</div>`;
+  if($('#cs'))$('#cs').onchange=e=>{S.c=e.target.value;vAtt()};
+  $('#ad').onchange=e=>{S.ad=e.target.value||today();vAtt()};
+  let r;if(S.pre&&S.pre.course===S.c&&S.pre.date===S.ad&&S.pre.r){r=S.pre.r;S.pre=null}else r=await api('day',{course:S.c,date:S.ad});
+  if(!r||!$('#bx'))return;
+  const T=totalDays(r),cl=closed(S.ad),st=r.students,mods=r.mods;let mod=r.module||'';const us=new Set(r.units||[]);
+  const strip=`<div class="cdays"><div class="cdh">Class Days</div><div class="cdone"><b>${r.cd}</b><span>${T?`of ${T} school days`:'school days so far'}</span></div></div>`;
+  if(cl){$('#bx').className='';$('#bx').innerHTML=strip+`<div class="card"><h4>${cl.k==='hol'?'Holiday':'Weekend'}</h4><span class="m">${cl.k==='hol'?esc(cl.r)||'School closed':'School is closed'} — attendance and units are not recorded for this date.</span></div>`;return}
+  if(!st.length){$('#bx').className='';$('#bx').innerHTML=strip+'This class has no students yet. Add names in the Students tab.';return}
+  $('#bx').className='';
+  $('#bx').innerHTML=strip+(mods.length?`<label>Module</label><select id="md"><option value="">Select module</option>${mods.map(m=>`<option ${m.name===mod?'selected':''}>${esc(m.name)}</option>`).join('')}</select><div id="un"></div>`:
+    '<p class="m">No modules yet. Add them in the Syllabus tab, or just write the topic below.</p>')+
+   `<label>Note / topic (optional when units are selected)</label><textarea id="tp" rows="2">${esc(r.note)}</textarea>
+   <div class="sum" id="sm"></div><div id="ls"></div><button id="sv" class="pri">${r.saved?'Update record':'Save record'}</button>`;
+  const topic=()=>{const n=$('#tp').value.trim(),u=[...us].join(', ');return((mod&&u?`${mod}: ${u}`:'')+(n?(mod&&u?' — ':'')+n:''))||'—'};
+  const drawU=()=>{const m=mods.find(x=>x.name===mod);if(!$('#un'))return;
+    if(!m){$('#un').innerHTML='';return}
+    const un=m.units.length?m.units:[m.name],dn=r.done[mod]||[];
+    $('#un').innerHTML=`<div class="hrs">Theory ${m.th}h · Practical ${m.pr}h</div><div class="chk">${un.map(u=>`<label><input type="checkbox" data-u="${esc(u)}" ${us.has(u)?'checked':''}> ${esc(u)}${dn.includes(u)&&!us.has(u)?' <span class="m">(done earlier)</span>':''}</label>`).join('')}</div>`};
+  const L={P:['Present',''],A:['Absent','ab'],L:['Leave','lv']};
+  const paint=()=>{
+    $('#ls').innerHTML=st.map((s,i)=>{const a=s.a+(s.s==='A'),l=s.l+(s.s==='L');
+      return `<div class="row ${L[s.s][1]}" data-i="${i}"><div>${esc(s.n)}${s.s==='P'?'':`<small>Missed: ${esc(topic())}</small><small>Total absent ${a} · leave ${l}</small>`}</div><b class="pill ${s.s==='A'?'a':s.s==='L'?'l':''}">${L[s.s][0]}</b></div>`}).join('');
+    const c=x=>st.filter(s=>s.s===x).length;$('#sm').textContent=`Present ${c('P')} · Absent ${c('A')} · Leave ${c('L')}`};
+  if($('#md')){$('#md').onchange=e=>{mod=e.target.value;us.clear();drawU();paint()};
+    $('#un').onchange=e=>{const u=e.target.dataset.u;if(u){e.target.checked?us.add(u):us.delete(u);paint()}};drawU()}
+  $('#ls').onclick=e=>{const w=e.target.closest('.row');if(w){const s=st[w.dataset.i];s.s={P:'A',A:'L',L:'P'}[s.s];paint()}};
+  $('#tp').oninput=paint;paint();
+  $('#sv').onclick=()=>{
+    if(!us.size&&!$('#tp').value.trim())return toast('Select the unit(s) taught or write a topic');
+    const c=S.c,d=S.ad;toast('Saving in the background…');$('#sv').textContent='Update record';
+    delete K['a'+c]; // records tab will reload
+    enqueue('save',{course:c,date:d,module:mod,units:[...us],note:$('#tp').value,students:st.map(s=>({n:s.n,s:s.s}))},()=>toast('Saved ✔'));
+  };
+}
+
+/* ---------- students ---------- */
+async function vStu(){
+  $('#main').innerHTML=`${courseSel()}<div style="height:8px"></div><textarea id="nn" rows="3" placeholder="Student names (one per line)"></textarea>
+   <div class="acts"><button id="ad2" class="pri" style="flex:1;margin:0">Add students</button><button id="up">Upload CSV</button></div>
+   <div class="hrs">CSV: one student name per row (first column, or a column titled "Name").</div><h3>Students <span class="m" id="cnt"></span></h3><div id="ls"></div>`;
+  const key=()=>'s'+S.c;
+  const show=n=>{if(tab!=='stu'||!$('#ls'))return;$('#cnt').textContent=n.length?`(${n.length})`:'';
+    $('#ls').innerHTML=n.map(x=>`<div class="row" style="cursor:default"><span>${esc(x)}</span><button class="ghost" data-n="${esc(x)}" aria-label="Remove">✕</button></div>`).join('')||'<span class="m">No students yet</span>'};
+  const load=async()=>{const k=key();K[k]?show(K[k]):$('#ls').innerHTML='<span class="m">Loading…</span>';
+    const r=await api('stuList',{course:S.c});if(r){K[k]=r.names;if(key()===k)show(r.names)}};
+  if($('#cs'))$('#cs').onchange=e=>{S.c=e.target.value;vStu()};
+  const addNames=list=>{if(!list.length)return;
+    const k=key(),c=S.c,cur=K[k]||[];K[k]=[...cur,...list.filter(n=>!cur.includes(n))];show(K[k]);delete K['a'+c];
+    enqueue('stuAdd',{course:c,names:list.join('\n')},r=>{K[k]=r.names;if(key()===k)show(r.names);toast('Saved ✔')})};
+  $('#ad2').onclick=()=>{const l=$('#nn').value.split('\n').map(s=>s.trim()).filter(Boolean);$('#nn').value='';addNames(l)};
+  $('#up').onclick=()=>pickFile(t=>{const l=parseNames(t);l.length?addNames(l):toast('No names found in this file')});
+  $('#ls').onclick=e=>{const n=e.target.dataset.n;if(!n||!confirm(`Remove "${n}" from this class?`))return;
+    const k=key(),c=S.c;K[k]=(K[k]||[]).filter(x=>x!==n);show(K[k]);delete K['a'+c];
+    enqueue('stuDel',{course:c,name:n},r=>{K[k]=r.names;if(key()===k)show(r.names)})};
+  load();
+}
+
+/* ---------- syllabus: timeline, hours, modules, units ---------- */
+async function vSyl(){
+  const c=S.c&&me.courses.includes(S.c)?S.c:me.courses[0];S.c=c;let first=1;
+  $('#main').innerHTML=`<div class="bar">${courseSel()}<button id="hb">🗓 Holidays</button></div>
+   <div class="card" style="margin-top:10px"><h4>Course timeline</h4><div class="two" style="margin-top:8px"><div><label>Start date</label><input type="date" id="sdt"></div><div><label>Deadline</label><input type="date" id="dl"></div></div>
+   <label>Class hours per day</label><input type="number" id="hp" min="1" max="12" value="3"><button id="sv" class="pri" style="margin-top:0">Save timeline</button></div>
+   <div class="card" id="pg"><span class="m">Loading…</span></div>
+   <div class="card"><h4>Add modules</h4><div class="acts"><button id="up">Upload CSV</button><button id="tp" class="ghost">Download template</button></div>
+    <div class="hrs">CSV columns: module, theory_hrs, practical_hrs, units (separate units with |)</div>
+    <input id="mn" placeholder="Module name (e.g. Module 1 - Computer Basics)"><div class="two"><input id="mt" type="number" min="0" placeholder="Theory hours"><input id="mp" type="number" min="0" placeholder="Practical hours"></div>
+    <textarea id="mu" rows="4" placeholder="Units (one per line)"></textarea><button id="ms" class="pri" style="margin-top:0">Save module</button></div>
+   <div id="ml"></div>`;
+  if($('#cs'))$('#cs').onchange=e=>{S.c=e.target.value;vSyl()};
+  $('#hb').onclick=openHol;
+  const k='y'+c;
+  const show=y=>{if(tab!=='syl'||!$('#pg'))return;
+    if(first){$('#sdt').value=y.start;$('#dl').value=y.deadline;$('#hp').value=y.hpd||3;first=0}
+    const p=y.prog,sp=pct(p.count,p.total),T=totalDays(y),hp=y.hpd||3;
+    $('#pg').innerHTML=`<div class="cdays" style="margin:-4px -4px 12px"><div class="cdh">Class Days</div><div class="cdone"><b>${y.cd}</b><span>${T?`of ${T} school days (Mon–Fri, no holidays)`:'school days so far'}</span></div></div>
+      ${bar('Units covered',`${p.count}/${p.total} · ${sp}%`,sp)}${chart({...y,prog:p},today())}`;
+    $('#ml').innerHTML=y.mods.map((m,i)=>`<div class="card"><b>${esc(m.name)}</b><div class="hrs">Theory ${m.th}h · Practical ${m.pr}h · ${m.units.length} unit(s)</div>
+      <div class="m" style="font-size:.85rem">${m.units.map(esc).join(' · ')}</div><div class="acts" style="margin:8px 0 0"><button data-a="e" data-i="${i}">Edit</button><button data-a="d" data-i="${i}">Delete</button></div></div>`).join('')||'<p class="m">No modules yet.</p>'};
+  const apply=r=>{if(r){K[k]=r;show(r);return 1}};
+  if(K[k])show(K[k]);
+  apply(await api('syl',{course:c}));
+  $('#sv').onclick=async()=>{if(apply(await api('setDates',{course:c,start:$('#sdt').value,deadline:$('#dl').value,hpd:$('#hp').value})))toast('Timeline saved ✔')};
+  const saveMods=async l=>{if(apply(await api('modAdd',{course:c,mods:l}))){toast('Modules saved ✔');return 1}};
+  $('#ms').onclick=async()=>{const name=$('#mn').value.trim();if(!name)return toast('Enter the module name');
+    if(await saveMods([{name,th:+$('#mt').value||0,pr:+$('#mp').value||0,units:$('#mu').value.split('\n').map(s=>s.trim()).filter(Boolean)}]))['mn','mt','mp','mu'].forEach(i=>$('#'+i).value='')};
+  $('#up').onclick=()=>pickFile(t=>{const l=parseMods(t);l.length?saveMods(l):toast('No modules found in this file')});
+  $('#tp').onclick=()=>{const b=new Blob(['module,theory_hrs,practical_hrs,units\n"Module 1 - Computer Basics",20,40,Unit 1.1 Hardware|Unit 1.2 Software|Unit 1.3 Windows\n"Module 2 - MS Office",16,32,Unit 2.1 Word|Unit 2.2 Excel\n'],{type:'text/csv'});
+    const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='modules-template.csv';a.click()};
+  $('#ml').onclick=async e=>{const a=e.target.dataset.a,m=K[k]&&K[k].mods[e.target.dataset.i];if(!a||!m)return;
+    if(a==='e'){$('#mn').value=m.name;$('#mt').value=m.th;$('#mp').value=m.pr;$('#mu').value=m.units.join('\n');$('#mn').scrollIntoView({block:'center'});toast('Edit the details, then tap Save module')}
+    else if(confirm(`Delete "${m.name}"? Past attendance records stay, but this module no longer counts in progress.`))apply(await api('modDel',{course:c,name:m.name}))};
+}
+
+/* ---------- records: monthly attendance, absentees and student dossiers ---------- */
+async function vRec(){
+  const cs=me.courses;if(!cs.includes(S.c))S.c=cs[0];S.rf=S.rf||'all';
+  $('#main').innerHTML=`<div class="bar">${courseSel()}<input id="sq" type="search" placeholder="Search student"></div>
+   <div class="seg"><button data-f="all">All students</button><button data-f="abs">Absent / Leave</button></div><div id="rl" class="m">Loading…</div>`;
+  if($('#cs'))$('#cs').onchange=e=>{S.c=e.target.value;vRec()};
+  const key='a'+S.c;let view=[];
+  const calc=a=>a.students.map(([n,st])=>{let p=0,x=0,l=0;for(const ch of st){if(ch==='P')p++;else if(ch==='A')x++;else if(ch==='L')l++}return{n,st,p,a:x,l,pc:pct(p,p+x+l)}});
+  const show=()=>{if(tab!=='rec'||!$('#rl')||!K[key])return;
+    document.querySelectorAll('.seg button').forEach(b=>b.classList.toggle('on',b.dataset.f===S.rf));
+    const q=$('#sq').value.trim().toLowerCase();let l=calc(K[key]).filter(s=>s.n.toLowerCase().includes(q));
+    if(S.rf==='abs')l=l.filter(s=>s.a+s.l).sort((a,b)=>b.a-a.a||b.l-a.l);
+    view=l;$('#rl').className='';
+    $('#rl').innerHTML=`<div class="hrs">${K[key].days.length} class days since the start</div>`+(l.map((s,i)=>`<div class="row" data-i="${i}"><div><b>${esc(s.n)}</b><small class="m">P ${s.p} · A ${s.a} · L ${s.l}</small></div>
+      ${S.rf==='abs'?`<div style="display:flex;gap:6px"><span class="pill a">A ${s.a}</span><span class="pill l">L ${s.l}</span></div>`:`<b class="${s.pc>=90?'ok':s.pc<75?'no':''}">${s.pc}%</b>`}</div>`).join('')||'<p class="m">Nothing to show.</p>')};
+  document.querySelectorAll('.seg button').forEach(b=>b.onclick=()=>{S.rf=b.dataset.f;show()});
+  $('#sq').oninput=show;
+  $('#rl').onclick=e=>{const w=e.target.closest('.row');if(w)showDoss(view,+w.dataset.i)};
+  show();
+  const r=await api('attend',{course:S.c});if(r){K[key]=r;show()}
+}
+async function showDoss(list,i){
+  const s=list[i],a=K['a'+S.c],tk=S.dt=(S.dt||0)+1;
+  sheet(`<div class="nv"><button id="pv" ${i?'':'disabled'}>‹</button><span class="m">${i+1} / ${list.length}</span><button id="nx" ${i<list.length-1?'':'disabled'}>›</button><button id="x" class="ghost">✕</button></div>
+   <div id="cvh" class="m" style="min-height:260px">Preparing card…</div><button id="dlb" class="pri" disabled>Download image</button>`);
+  $('#pv').onclick=()=>showDoss(list,i-1);$('#nx').onclick=()=>showDoss(list,i+1);
+  const c=await makeCard(720,(g,W,H)=>drawDossier(g,W,H,{n:s.n,st:s.st,days:a.days,course:S.c}));
+  if(tk!==S.dt||!$('#cvh'))return;
+  $('#cvh').innerHTML='';$('#cvh').appendChild(c);$('#dlb').disabled=false;$('#dlb').onclick=()=>dl(c,'dossier-'+s.n.replace(/\W+/g,'_')+'.png');
+}
+
+/* ---------- President PAFWA card ---------- */
+async function vPres(){
+  const dt=S.pd||today(),key='d'+dt;
+  $('#main').innerHTML=`<input type="date" id="pd" value="${dt}" max="${today()}"><div id="pc" class="m">Preparing…</div><button id="pdl" class="pri" disabled>Download image</button>`;
+  $('#pd').onchange=e=>{S.pd=e.target.value||today();vPres()};
+  let tk=S.pk=(S.pk||0)+1;
+  const render=async items=>{
+    const c=await makeCard(720,(g,W,H)=>drawPres(g,W,H,{date:dt,items}));
+    if(tab!=='pres'||!$('#pc')||tk!==S.pk)return;
+    $('#pc').innerHTML='';$('#pc').appendChild(c);$('#pdl').disabled=false;$('#pdl').onclick=()=>dl(c,'President-PAFWA-'+dt+'.png')};
+  if(K[key])render(K[key]);
+  const r=await api('dash',{date:dt});if(r){K[key]=r.items;render(r.items)}
+}
+
+/* ---------- messages: leadership -> teacher, with acknowledgement ---------- */
+async function vMsg(){
+  $('#main').innerHTML=`<div class="card"><h4>New message</h4><div style="height:8px"></div><select id="mt"><option value="">Select teacher</option></select>
+   <textarea id="mx" rows="3" maxlength="500" placeholder="Write your message…"></textarea><button id="mb" class="pri" style="margin-top:0">Send</button></div>
+   <h3>Sent</h3><div id="ms" class="m">Loading…</div>`;
+  const fill=l=>{if($('#mt'))$('#mt').innerHTML='<option value="">Select teacher</option>'+l.map(t=>`<option value="${esc(t.u)}">${esc(t.name)}${t.courses?' — '+esc(t.courses):''}</option>`).join('')};
+  const show=()=>{if(tab!=='msg'||!$('#ms'))return;$('#ms').className='';
+    $('#ms').innerHTML=(K.sent||[]).map(m=>`<div class="card msg ${m.ack?'done':''}"><b>${esc(m.tn)}</b> <span class="m2">${fdt(m.ts)}</span><p style="margin:6px 0">${esc(m.text)}</p>
+      <span class="${m.ack?'ok':'lv'}">${m.ack?'✓ Acknowledged · '+fdt(m.ack):'Delivered · waiting for acknowledgement'}</span></div>`).join('')||'<p class="m">No messages sent yet.</p>'};
+  if(K.teachers)fill(K.teachers);show();
+  $('#mb').onclick=async()=>{const to=$('#mt').value,text=$('#mx').value.trim();if(!to)return toast('Select a teacher');if(!text)return toast('Write a message first');
+    $('#mb').disabled=true;$('#mb').textContent='Sending…';const r=await api('msgSend',{to,text});$('#mb').disabled=false;$('#mb').textContent='Send';
+    if(r){$('#mx').value='';toast('Message sent ✔');const s=await api('sent');if(s){setSent(s.msgs,false);show()}}};
+  api('teachers').then(r=>{if(r){K.teachers=r.teachers;fill(r.teachers)}});
+  api('sent').then(r=>{if(r){setSent(r.msgs,false);show()}});
+}
+function setSent(ms,nt){
+  if(nt&&K.sent)ms.forEach(m=>{const o=K.sent.find(x=>x.id===m.id);if(m.ack&&o&&!o.ack)toast(`✓ ${m.tn} acknowledged your message`)});
+  K.sent=ms;if(tab==='msg'&&$('#ms')&&$('#mt'))vMsgList();
+}
+function vMsgList(){const e=$('#ms');if(!e)return;e.className='';e.innerHTML=(K.sent||[]).map(m=>`<div class="card msg ${m.ack?'done':''}"><b>${esc(m.tn)}</b> <span class="m2">${fdt(m.ts)}</span><p style="margin:6px 0">${esc(m.text)}</p><span class="${m.ack?'ok':'lv'}">${m.ack?'✓ Acknowledged · '+fdt(m.ack):'Delivered · waiting for acknowledgement'}</span></div>`).join('')||'<p class="m">No messages sent yet.</p>'}
+function setInbox(ms,nt){
+  K.inbox=ms;const un=ms.filter(m=>!m.ack),b=$('#bc');
+  if(b){b.textContent=un.length||'';b.style.display=un.length?'flex':'none'}
+  const nw=un.filter(m=>!SEEN.has(m.id));un.forEach(m=>SEEN.add(m.id));
+  if(nt&&nw.length)notify(nw[0],nw.length);
+  if(S.sh==='inbox')renderInbox();
+}
+function notify(m,n){
+  const e=$('#notif');
+  e.innerHTML=`<div class="m2">📩 New message${n>1?` · +${n-1} more`:''}</div><b>${esc(m.fn)}</b><p>${esc(m.text.length>150?m.text.slice(0,150)+'…':m.text)}</p>
+   <div class="acts" style="margin:0"><button id="na" class="pri" style="flex:1;margin:0">Acknowledge</button><button id="nv">View</button></div>`;
+  e.classList.add('on');clearTimeout(notify.h);notify.h=setTimeout(()=>e.classList.remove('on'),20000);
+  $('#na').onclick=()=>{e.classList.remove('on');ack(m.id)};$('#nv').onclick=()=>{e.classList.remove('on');openInbox()};
+}
+function ack(id){
+  const m=(K.inbox||[]).find(x=>x.id===id);if(m&&!m.ack)m.ack=new Date().toISOString();setInbox(K.inbox||[],false);
+  enqueue('msgAck',{id},r=>{setInbox(r.msgs,false);toast('Acknowledged ✔')});
+}
+function renderInbox(){
+  const l=K.inbox||[];
+  $('#il').innerHTML=l.map(m=>`<div class="card msg ${m.ack?'done':''}"><b>${esc(m.fn)}</b> <span class="m2">${fdt(m.ts)}</span><p style="margin:6px 0">${esc(m.text)}</p>
+   ${m.ack?`<span class="ok">✓ Acknowledged · ${fdt(m.ack)}</span>`:`<button class="pri" data-id="${m.id}" style="margin:0">Acknowledge</button>`}</div>`).join('')||'<p class="m">No messages.</p>';
+}
+function openInbox(){
+  S.sh='inbox';sheet(`<div class="nv"><b style="font-size:1.1rem">Messages</b><button id="x" class="ghost">✕</button></div><div id="il"></div>`);
+  renderInbox();$('#il').onclick=e=>{const id=e.target.dataset.id;if(id)ack(id)};
+  api('inbox',{},1,1).then(r=>r&&setInbox(r.msgs,false));
+}
+async function poll(){
+  if(!me||document.hidden||Q.length)return;
+  if(me.p.recv){const r=await api('inbox',{},1,1);if(r)setInbox(r.msgs,true)}
+  if(me.p.send){const r=await api('sent',{},1,1);if(r)setSent(r.msgs,true)}
+}
+setInterval(poll,60000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)poll()});
+
+/* ---------- users (admin) ---------- */
+async function vUsr(){
+  let RL=K.roles||[];
+  const FL=[['w','Can mark attendance, manage students &amp; syllabus'],['all','Can see ALL courses (dashboard)'],['hol','Can manage holidays'],['send','Can send messages to staff'],['recv','Receives messages from management']];
+  $('#main').innerHTML=`<div id="ul" class="m">Loading…</div><h3>Add new user</h3>
+   <input id="un" placeholder="Username (no spaces)" autocapitalize="none"><input id="fn" placeholder="Full name">
+   <select id="ro"></select>
+   <div id="cc" class="chk">${COURSES.map(c=>`<label><input type="checkbox" value="${esc(c)}"> ${esc(c)}</label>`).join('')}</div>
+   <input id="pw" placeholder="Password (at least 8 characters)"><button id="ab" class="pri">Add user</button>
+   <h3>User types</h3><div id="rl"></div>
+   <div class="card"><h4>Add new user type</h4><input id="rn" placeholder="Type name (e.g. Vice Principal)">
+   <div id="rf" class="chk">${FL.map(f=>`<label><input type="checkbox" value="${f[0]}"> ${f[1]}</label>`).join('')}</div>
+   <small class="m">If "ALL courses" is not ticked, you choose the courses for each user of this type.</small>
+   <button id="rb" class="pri">Add user type</button></div>`;
+  const chg=()=>{const r=RL.find(x=>x.id===$('#ro').value);$('#cc').style.display=r&&!r.all?'':'none'};
+  const fillR=()=>{const v=$('#ro').value;$('#ro').innerHTML=RL.map(r=>`<option value="${esc(r.id)}">${esc(r.label)}</option>`).join('');if(v)$('#ro').value=v;chg()};
+  const showR=()=>{$('#rl').innerHTML=RL.map(r=>`<div class="row" style="cursor:default"><div><b>${esc(r.label)}</b><small class="m">${[r.w&&'Attendance',r.all&&'All courses',r.hol&&'Holidays',r.send&&'Send msgs',r.recv&&'Inbox'].filter(Boolean).join(' · ')||'View records only'}</small></div>${r.builtin?'':`<button class="ghost" data-r="${esc(r.id)}" aria-label="Delete">✕</button>`}</div>`).join('')};
+  $('#ro').onchange=chg;
+  const show=list=>{if(tab!=='usr'||!$('#ul'))return;$('#ul').className='';
+    $('#ul').innerHTML=list.map(x=>`<div class="card" style="${x.active?'':'opacity:.55'}"><h4>${esc(x.name)}</h4><div class="m">@${esc(x.u)} · ${esc(x.rl)}${x.courses?' · '+esc(x.courses):''}${x.active?'':' · Disabled'}</div>
+     <div class="acts" style="margin:8px 0 0"><button data-a="pw" data-u="${esc(x.u)}">Reset password</button><button data-a="tg" data-u="${esc(x.u)}">${x.active?'Disable':'Enable'}</button></div></div>`).join('')};
+  const ld=x=>{if(tab!=='usr'||!$('#ul'))return;K.users=x.users;K.roles=RL=x.roles;fillR();showR();show(x.users)};
+  if(K.users){fillR();showR();show(K.users)}
+  const r0=await api('users');if(r0)ld(r0);
+  $('#ul').onclick=async e=>{const a=e.target.dataset.a,u=e.target.dataset.u;if(!a)return;
+    if(a==='pw'){const p=prompt('New password (at least 8 characters):');if(p&&await api('userPw',{u,p}))toast('Password changed ✔')}
+    else{K.users=K.users.map(x=>x.u===u?{...x,active:!x.active}:x);show(K.users);
+      const r=await api('userToggle',{u});if(r)ld(r);else vUsr()}};
+  $('#ab').onclick=async()=>{const courses=[...document.querySelectorAll('#cc input:checked')].map(i=>i.value);
+    $('#ab').disabled=true;$('#ab').textContent='Adding…';
+    const x=await api('userAdd',{u:$('#un').value,name:$('#fn').value,role:$('#ro').value,courses,p:$('#pw').value});
+    if(!$('#ab'))return;$('#ab').disabled=false;$('#ab').textContent='Add user';
+    if(x){ld(x);['un','fn','pw'].forEach(i=>$('#'+i).value='');document.querySelectorAll('#cc input').forEach(i=>i.checked=false);toast('User added ✔')}};
+  $('#rb').onclick=async()=>{const f={};document.querySelectorAll('#rf input').forEach(i=>f[i.value]=i.checked);
+    $('#rb').disabled=true;const x=await api('roleAdd',{label:$('#rn').value,f});
+    if(!$('#rb'))return;$('#rb').disabled=false;
+    if(x){ld(x);$('#rn').value='';document.querySelectorAll('#rf input').forEach(i=>i.checked=false);toast('User type added ✔')}};
+  $('#rl').onclick=async e=>{const id=e.target.dataset.r;if(!id||!confirm('Delete this user type?'))return;const x=await api('roleDel',{id});if(x){ld(x);toast('Deleted ✔')}};
+}
+
+if(tok)api('me').then(r=>{if(r)start({me:r.me});else if(!me)vLogin()});else vLogin();
+</script>
+</body>
+</html>
