@@ -106,7 +106,7 @@ canvas{display:block}
 <div id="sheet"></div>
 <div id="notif"></div>
 <script>
-const API='PASTE_WORKER_URL_HERE';   // <-- paste your Cloudflare Worker URL here (https://xxxx.workers.dev)
+const API='https://psdc-api.itinstpsdc.workers.dev';   // <-- paste your Cloudflare Worker URL here (https://xxxx.workers.dev)
 const COURSES=['CO/IT Asstt (A)','CO/IT Asstt (B)','DM','CGP'];
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
